@@ -1,779 +1,847 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Pão & Felicidade</title>
-    <link rel="stylesheet" href="css/Style_Index.css">
 
+    <link rel="stylesheet" th:href="@{/css/index.css}">
 </head>
-
 
 <body>
 
+<!-- CABEÇALHO -->
+<header>
 
-    <header>
+    <div class="header-container">
 
-        <div class="header-container">
+        <!-- LOGO -->
+        <div class="logo-area">
 
-            <!-- LOGO -->
-            <div class="logo-area">
-
-                <!--
-                    COLOQUE SUA LOGO AQUI:
-
-                    img/logo.png
-                -->
-
+            <a th:href="@{/}">
                 <img
-                    src="img/Logo (2).png"
-                    alt="Logo Pão & Felicidade"
-                    class="logo"
-                >
+                        th:src="@{/img/Logo (2).png}"
+                        alt="Logo Pão & Felicidade"
+                        class="logo">
+            </a>
 
-                <div class="logo-text">
-                    PÃO & FELICIDADE
-                </div>
-
+            <div class="logo-text">
+                PÃO & FELICIDADE
             </div>
 
-
-            <!-- MENU -->
-
-            <nav>
-
-                <a href="Index.html">
-                    Início
-                </a>
-
-                <a href="Agendamentos.html">
-                    Agendamentos
-                </a>
-
-                <a href="Food_to_Save.html">
-                    Food to Save
-                </a>
-
-            </nav>
+        </div>
 
 
-            <!-- CARRINHO -->
+        <!-- MENU -->
+        <nav>
 
-            <a href="Carrinho.html" class="cart-button">
+            <a th:href="@{/}">
+                Início
+            </a>
+
+            <a th:href="@{/agendamentos}">
+                Agendamentos
+            </a>
+
+            <a th:href="@{/food-to-save}">
+                Food to Save
+            </a>
+
+        </nav>
+
+
+        <!-- CARRINHO -->
+        <a th:href="@{/carrinho}" class="cart-button">
 
                 <span class="cart-icon">
                     🛒
                 </span>
 
-                <span>
+            <span>
                     Carrinho
                 </span>
 
-            </a>
+            <span id="cartCount" class="cart-count">
+                    0
+                </span>
 
-        </div>
+        </a>
 
-    </header>
+    </div>
 
-    <main>
+</header>
 
-         <section class="welcome">
 
-            <div class="welcome-content">
+<!-- CONTEÚDO PRINCIPAL -->
+<main>
 
-                <!-- TEXTO -->
 
-                <div class="welcome-text">
+    <!-- APRESENTAÇÃO -->
+    <section class="welcome">
+
+        <div class="welcome-content">
+
+            <!-- TEXTO -->
+            <div class="welcome-text">
 
                     <span class="welcome-small">
                         SEJA BEM-VINDO(A)
                     </span>
 
-                    <h1>
-                        Pão & Felicidade
-                    </h1>
+                <h1>
+                    Pão & Felicidade
+                </h1>
 
-                    <div class="welcome-line"></div>
+                <div class="welcome-line"></div>
 
-                    <p>
-                        A Padaria Pão & Felicidade oferece pães, bolos e doces
-                        feitos com amor e dedicação, unindo qualidade e o
-                        verdadeiro sabor de casa para proporcionar momentos
-                        especiais a cada cliente.
-                    </p>
-
-                </div>
-
-
-                <!-- IMAGEM -->
-
-                <div class="welcome-image">
-
-                    <img
-                        src="img/Main.png"
-                        alt="Pães frescos da Padaria Pão & Felicidade"
-                    >
-
-                </div>
+                <p>
+                    A Padaria Pão & Felicidade oferece pães, bolos e doces
+                    feitos com amor e dedicação, unindo qualidade e o
+                    verdadeiro sabor de casa para proporcionar momentos
+                    especiais a cada cliente.
+                </p>
 
             </div>
 
-        </section>
+
+            <!-- IMAGEM -->
+            <div class="welcome-image">
+
+                <img
+                        th:src="@{/img/Main.png}"
+                        alt="Pães frescos da Padaria Pão & Felicidade">
+
+            </div>
+
+        </div>
+
+    </section>
 
 
 
+    <!-- PRODUTOS -->
+    <section class="products-section" id="produtos">
 
-        <section class="products-section" id="produtos">
 
-            <div class="category">
+        <!-- =================================================
+             PÃES
+        ================================================== -->
 
-                <div class="category-title">
+        <div class="category">
+
+            <div class="category-title">
 
                     <span class="category-icon">
                         🥖
                     </span>
 
-                    <h2>
-                        Pães
-                    </h2>
-
-                </div>
-
-
-                <div class="products-grid">
-
-
-                    <!-- PRODUTO 1 -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Pão_Frânces.png"
-                            alt="Pão Francês"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Pão Francês
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 1,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUTO 2 -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Baguete.png"
-                            alt="Baguete"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Baguete
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 6,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUTO 3 -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Pão_de_Forma.png"
-                            alt="Pão de Forma"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Pão de Forma
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 5,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PRODUTO 4 -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Pão_de_Queijo.png"
-                            alt="Pão de Queijo"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Pão de Queijo
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 4,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-                </div>
+                <h2>
+                    Pães
+                </h2>
 
             </div>
 
 
+            <div class="products-grid">
 
-            <!-- =================================================
-                 DOCES
-            ================================================== -->
 
-            <div class="category">
+                <!-- PÃO FRANCÊS -->
+                <article class="product-card">
 
-                <div class="category-title">
+                    <img
+                            th:src="@{/img/Pão_Frânces.png}"
+                            alt="Pão Francês"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Pão Francês
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 1,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Pão Francês"
+                                data-price="1.00"
+                                data-image="/img/Pão_Frânces.png"
+                                data-category="Pães">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- BAGUETE -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Baguete.png}"
+                            alt="Baguete"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Baguete
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 6,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Baguete"
+                                data-price="6.00"
+                                data-image="/img/Baguete.png"
+                                data-category="Pães">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PÃO DE FORMA -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Pão_de_Forma.png}"
+                            alt="Pão de Forma"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Pão de Forma
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 5,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Pão de Forma"
+                                data-price="5.00"
+                                data-image="/img/Pão_de_Forma.png"
+                                data-category="Pães">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PÃO DE QUEIJO -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Pão_de_Queijo.png}"
+                            alt="Pão de Queijo"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Pão de Queijo
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 4,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Pão de Queijo"
+                                data-price="4.00"
+                                data-image="/img/Pão_de_Queijo.png"
+                                data-category="Pães">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             DOCES
+        ================================================== -->
+
+        <div class="category">
+
+            <div class="category-title">
 
                     <span class="category-icon">
                         🍰
                     </span>
 
-                    <h2>
-                        Doces
-                    </h2>
-
-                </div>
-
-
-                <div class="products-grid">
-
-
-                    <!-- BRIGADEIRO -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Brigadeiro.png"
-                            alt="Brigadeiro"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Brigadeiro
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 3,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SONHO -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Sonho.png"
-                            alt="Sonho"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Sonho
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 4,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- CUPCAKE -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Cupcake.png"
-                            alt="Cupcake"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Cupcake
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 5,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- TORTINHA -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Torta_de_Morango.png"
-                            alt="Tortinha de Morango"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Tortinha de Morango
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 7,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-                </div>
+                <h2>
+                    Doces
+                </h2>
 
             </div>
 
 
+            <div class="products-grid">
 
-            <!-- =================================================
-                 SALGADOS
-            ================================================== -->
 
-            <div class="category">
+                <!-- BRIGADEIRO -->
+                <article class="product-card">
 
-                <div class="category-title">
+                    <img
+                            th:src="@{/img/Brigadeiro.png}"
+                            alt="Brigadeiro"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Brigadeiro
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 3,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Brigadeiro"
+                                data-price="3.00"
+                                data-image="/img/Brigadeiro.png"
+                                data-category="Doces">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SONHO -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Sonho.png}"
+                            alt="Sonho"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Sonho
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 4,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Sonho"
+                                data-price="4.00"
+                                data-image="/img/Sonho.png"
+                                data-category="Doces">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CUPCAKE -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Cupcake.png}"
+                            alt="Cupcake"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Cupcake
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 5,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Cupcake"
+                                data-price="5.00"
+                                data-image="/img/Cupcake.png"
+                                data-category="Doces">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TORTINHA DE MORANGO -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Torta_de_Morango.png}"
+                            alt="Tortinha de Morango"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Tortinha de Morango
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 7,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Tortinha de Morango"
+                                data-price="7.00"
+                                data-image="/img/Torta_de_Morango.png"
+                                data-category="Doces">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SALGADOS
+        ================================================== -->
+
+        <div class="category">
+
+            <div class="category-title">
 
                     <span class="category-icon">
                         🥪
                     </span>
 
-                    <h2>
-                        Salgados
-                    </h2>
-
-                </div>
-
-
-                <div class="products-grid">
-
-
-                    <!-- COXINHA -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Coxinha.png"
-                            alt="Coxinha"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Coxinha
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 4,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- EMPADA -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Empada.png"
-                            alt="Empada"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Empada
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 5,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- PASTEL -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Pastel.png"
-                            alt="Pastel"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Pastel
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 4,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- ESFIHA -->
-
-                    <article class="product-card">
-
-                        <img
-                            src="img/Esfirá.png"
-                            alt="Esfiha"
-                            class="product-image"
-                        >
-
-                        <div class="product-info">
-
-                            <h3 class="product-name">
-                                Esfiha
-                            </h3>
-
-                            <p class="product-price">
-                                R$ 5,00
-                            </p>
-
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
-
-                        </div>
-
-                    </article>
-
-                </div>
+                <h2>
+                    Salgados
+                </h2>
 
             </div>
 
 
+            <div class="products-grid">
 
-            <!-- =================================================
-                 BOLOS
-            ================================================== -->
 
-            <div class="category">
+                <!-- COXINHA -->
+                <article class="product-card">
 
-                <div class="category-title">
+                    <img
+                            th:src="@{/img/Coxinha.png}"
+                            alt="Coxinha"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Coxinha
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 4,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Coxinha"
+                                data-price="4.00"
+                                data-image="/img/Coxinha.png"
+                                data-category="Salgados">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- EMPADA -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Empada.png}"
+                            alt="Empada"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Empada
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 5,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Empada"
+                                data-price="5.00"
+                                data-image="/img/Empada.png"
+                                data-category="Salgados">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PASTEL -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Pastel.png}"
+                            alt="Pastel"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Pastel
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 4,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Pastel"
+                                data-price="4.00"
+                                data-image="/img/Pastel.png"
+                                data-category="Salgados">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ESFIHA -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Esfirá.png}"
+                            alt="Esfiha"
+                            class="product-image">
+
+                    <div class="product-info">
+
+                        <h3 class="product-name">
+                            Esfiha
+                        </h3>
+
+                        <p class="product-price">
+                            R$ 5,00
+                        </p>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Esfiha"
+                                data-price="5.00"
+                                data-image="/img/Esfirá.png"
+                                data-category="Salgados">
+                            🛒 Adicionar
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             BOLOS
+        ================================================== -->
+
+        <div class="category">
+
+            <div class="category-title">
 
                     <span class="category-icon">
                         🎂
                     </span>
 
-                    <h2>
-                        Bolos
-                    </h2>
+                <h2>
+                    Bolos
+                </h2>
 
-                </div>
-
-
-                <div class="products-grid">
+            </div>
 
 
-                    <!-- BOLO CHOCOLATE -->
+            <div class="products-grid">
 
-                    <article class="product-card">
 
-                        <img
-                            src="img/Bolo_de_chocolate.png"
+                <!-- BOLO DE CHOCOLATE -->
+                <article class="product-card">
+
+                    <img
+                            th:src="@{/img/Bolo_de_chocolate.png}"
                             alt="Bolo de Chocolate"
-                            class="product-image"
-                        >
+                            class="product-image">
 
-                        <div class="product-info">
+                    <div class="product-info">
 
-                            <h3 class="product-name">
-                                Bolo de Chocolate
-                            </h3>
+                        <h3 class="product-name">
+                            Bolo de Chocolate
+                        </h3>
 
-                            <p class="product-price">
-                                R$ 45,00
-                            </p>
+                        <p class="product-price">
+                            R$ 45,00
+                        </p>
 
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Bolo de Chocolate"
+                                data-price="45.00"
+                                data-image="/img/Bolo_de_chocolate.png"
+                                data-category="Bolos">
+                            🛒 Adicionar
+                        </button>
 
-                        </div>
+                    </div>
 
-                    </article>
+                </article>
 
 
-                    <!-- BOLO RED VELVET -->
+                <!-- BOLO RED VELVET -->
+                <article class="product-card">
 
-                    <article class="product-card">
-
-                        <img
-                            src="img/Bolo_de_Red_Velvet.png"
+                    <img
+                            th:src="@{/img/Bolo_de_Red_Velvet.png}"
                             alt="Bolo Red Velvet"
-                            class="product-image"
-                        >
+                            class="product-image">
 
-                        <div class="product-info">
+                    <div class="product-info">
 
-                            <h3 class="product-name">
-                                Bolo Red Velvet
-                            </h3>
+                        <h3 class="product-name">
+                            Bolo Red Velvet
+                        </h3>
 
-                            <p class="product-price">
-                                R$ 50,00
-                            </p>
+                        <p class="product-price">
+                            R$ 50,00
+                        </p>
 
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Bolo Red Velvet"
+                                data-price="50.00"
+                                data-image="/img/Bolo_de_Red_Velvet.png"
+                                data-category="Bolos">
+                            🛒 Adicionar
+                        </button>
 
-                        </div>
+                    </div>
 
-                    </article>
+                </article>
 
 
-                    <!-- BOLO DE MORANGO -->
+                <!-- BOLO DE MORANGO -->
+                <article class="product-card">
 
-                    <article class="product-card">
-
-                        <img
-                            src="img/Bolo_de_Morango.png"
+                    <img
+                            th:src="@{/img/Bolo_de_Morango.png}"
                             alt="Bolo de Morango"
-                            class="product-image"
-                        >
+                            class="product-image">
 
-                        <div class="product-info">
+                    <div class="product-info">
 
-                            <h3 class="product-name">
-                                Bolo de Morango
-                            </h3>
+                        <h3 class="product-name">
+                            Bolo de Morango
+                        </h3>
 
-                            <p class="product-price">
-                                R$ 48,00
-                            </p>
+                        <p class="product-price">
+                            R$ 48,00
+                        </p>
 
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Bolo de Morango"
+                                data-price="48.00"
+                                data-image="/img/Bolo_de_Morango.png"
+                                data-category="Bolos">
+                            🛒 Adicionar
+                        </button>
 
-                        </div>
+                    </div>
 
-                    </article>
+                </article>
 
 
-                    <!-- BOLO DE LIMÃO -->
+                <!-- BOLO DE LIMÃO -->
+                <article class="product-card">
 
-                    <article class="product-card">
-
-                        <img
-                            src="img/Bolo_de_Limão.png"
+                    <img
+                            th:src="@{/img/Bolo_de_Limão.png}"
                             alt="Bolo de Limão"
-                            class="product-image"
-                        >
+                            class="product-image">
 
-                        <div class="product-info">
+                    <div class="product-info">
 
-                            <h3 class="product-name">
-                                Bolo de Limão
-                            </h3>
+                        <h3 class="product-name">
+                            Bolo de Limão
+                        </h3>
 
-                            <p class="product-price">
-                                R$ 42,00
-                            </p>
+                        <p class="product-price">
+                            R$ 42,00
+                        </p>
 
-                            <button class="add-cart">
-                                🛒 Adicionar
-                            </button>
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Bolo de Limão"
+                                data-price="42.00"
+                                data-image="/img/Bolo_de_Limão.png"
+                                data-category="Bolos">
+                            🛒 Adicionar
+                        </button>
 
-                        </div>
+                    </div>
 
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =====================================================
-         RODAPÉ
-    ====================================================== -->
-
-    <footer id="contato">
-
-        <div class="footer-container">
-
-
-            <div class="footer-column">
-
-                <h3>
-                    📍 Endereço
-                </h3>
-
-                <p>
-                    Alameda Gabriel Monteiro da Silva, 1874
-                    <br>
-                    Jardim Paulista, São Paulo - SP
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    📞 Telefone
-                </h3>
-
-                <p>
-                    (11) 87564-2765
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    ✉ E-mail
-                </h3>
-
-                <p>
-                    padaria_felicidade@gmail.com
-                </p>
-
-            </div>
-
-
-            <div class="footer-column">
-
-                <h3>
-                    📷 Instagram
-                </h3>
-
-                <p>
-                    @padaria_felicidade
-                </p>
+                </article>
 
             </div>
 
         </div>
 
+    </section>
 
-        <div class="copyright">
+</main>
 
-            © 2026 Pão & Felicidade — Todos os direitos reservados.
+
+
+<!-- =====================================================
+     RODAPÉ
+====================================================== -->
+
+<footer id="contato">
+
+    <div class="footer-container">
+
+
+        <div class="footer-column">
+
+            <h3>
+                📍 Endereço
+            </h3>
+
+            <p>
+                Alameda Gabriel Monteiro da Silva, 1874
+                <br>
+                Jardim Paulista, São Paulo - SP
+            </p>
 
         </div>
 
-    </footer>
-    
-    <script src="js/produtos.js"></script>
+
+        <div class="footer-column">
+
+            <h3>
+                📞 Telefone
+            </h3>
+
+            <p>
+                (11) 87564-2765
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                ✉ E-mail
+            </h3>
+
+            <p>
+                padaria_felicidade@gmail.com
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                📷 Instagram
+            </h3>
+
+            <p>
+                @padaria_felicidade
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Pão & Felicidade — Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT COMPARTILHADO DO CARRINHO -->
+<script th:src="@{/js/carrinho.js}"></script>
 
 </body>
-
 </html>

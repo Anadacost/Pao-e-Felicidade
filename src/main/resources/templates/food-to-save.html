@@ -1,0 +1,500 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food to Save | Pão & Felicidade</title>
+
+    <link rel="stylesheet" th:href="@{/css/food_to_save.css}">
+</head>
+
+<body>
+
+<!-- =========================
+     CABEÇALHO
+========================== -->
+
+<header>
+
+    <div class="header-container">
+
+        <!-- LOGO -->
+        <div class="logo-area">
+
+            <a th:href="@{/}">
+                <img
+                        th:src="@{/img/Logo (2).png}"
+                        alt="Logo Pão & Felicidade"
+                        class="logo">
+            </a>
+
+            <div class="logo-text">
+                PÃO & FELICIDADE
+            </div>
+
+        </div>
+
+
+        <!-- MENU -->
+        <nav>
+
+            <a th:href="@{/}">
+                Início
+            </a>
+
+            <a th:href="@{/agendamentos}">
+                Agendamentos
+            </a>
+
+            <a th:href="@{/food-to-save}">
+                Food to Save
+            </a>
+
+        </nav>
+
+
+        <!-- CARRINHO -->
+        <a th:href="@{/carrinho}" class="cart-button">
+
+                <span class="cart-icon">
+                    🛒
+                </span>
+
+            <span>
+                    Carrinho
+                </span>
+
+            <span id="cartCount" class="cart-count">
+                    0
+                </span>
+
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     CONTEÚDO PRINCIPAL
+========================== -->
+
+<main>
+
+
+    <!-- =========================
+         BANNER PRINCIPAL
+    ========================== -->
+
+    <section class="food-hero">
+
+        <!-- IMAGEM PRINCIPAL -->
+        <div class="hero-image">
+
+            <img
+                    th:src="@{/img/Sacola_de_Food_to_Save.png}"
+                    alt="Sacola surpresa Food to Save">
+
+        </div>
+
+
+        <!-- TEXTO PRINCIPAL -->
+        <div class="hero-text">
+
+                <span class="tag">
+                    FOOD TO SAVE
+                </span>
+
+            <h2>
+                Uma surpresa deliciosa
+                por um preço especial!
+            </h2>
+
+            <p>
+                Aproveite produtos que ainda estão próprios
+                para consumo por preços mais acessíveis.
+            </p>
+
+            <p>
+                O conteúdo das sacolas pode variar de acordo
+                com a disponibilidade do dia.
+            </p>
+
+            <a href="#sacolas" class="button">
+                Ver sacolas
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         INTRODUÇÃO
+    ========================== -->
+
+    <section class="intro">
+
+            <span class="section-tag">
+                FOOD TO SAVE
+            </span>
+
+        <h2>
+            Aproveite. Economize. Evite o desperdício.
+        </h2>
+
+        <p>
+            No final do dia, alguns produtos podem continuar
+            próprios para consumo. Por isso, criamos nossas
+            sacolas surpresa com produtos variados por um
+            preço especial.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         SACOLAS
+    ========================== -->
+
+    <section class="sacolas" id="sacolas">
+
+        <div class="section-title">
+
+                <span>
+                    OFERTAS
+                </span>
+
+            <h2>
+                Nossas sacolas
+            </h2>
+
+            <p>
+                Escolha uma categoria e descubra sua surpresa.
+            </p>
+
+        </div>
+
+
+
+        <div class="sacolas-grid">
+
+
+            <!-- =========================
+                 SACOLA 1 - PÃES
+            ========================== -->
+
+            <article class="sacola-card">
+
+                <div class="sacola-image">
+
+                    <img
+                            th:src="@{/img/Sacola_de_Pães.png}"
+                            alt="Sacola de pães">
+
+                </div>
+
+
+                <div class="sacola-content">
+
+                        <span class="category">
+                            🥖 PÃES
+                        </span>
+
+                    <h3>
+                        Sacola de Pães
+                    </h3>
+
+                    <p>
+                        Pães variados selecionados
+                        de acordo com a disponibilidade.
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            R$ 8,00
+                        </strong>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Sacola de Pães"
+                                data-price="8.00"
+                                data-image="/img/Sacola_de_Pães.png"
+                                data-category="Food to Save">
+
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 SACOLA 2 - DOCES
+            ========================== -->
+
+            <article class="sacola-card">
+
+                <div class="sacola-image">
+
+                    <img
+                            th:src="@{/img/Sacola_de_doces.png}"
+                            alt="Sacola de doces">
+
+                </div>
+
+
+                <div class="sacola-content">
+
+                        <span class="category">
+                            🍰 DOCES
+                        </span>
+
+                    <h3>
+                        Sacola de Doces
+                    </h3>
+
+                    <p>
+                        Doces e sobremesas variados
+                        escolhidos conforme a disponibilidade.
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            R$ 12,00
+                        </strong>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Sacola de Doces"
+                                data-price="12.00"
+                                data-image="/img/Sacola_de_doces.png"
+                                data-category="Food to Save">
+
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 SACOLA 3 - SALGADOS
+            ========================== -->
+
+            <article class="sacola-card">
+
+                <div class="sacola-image">
+
+                    <img
+                            th:src="@{/img/Sacola_de_Salgados.png}"
+                            alt="Sacola de salgados">
+
+                </div>
+
+
+                <div class="sacola-content">
+
+                        <span class="category">
+                            🥪 SALGADOS
+                        </span>
+
+                    <h3>
+                        Sacola de Salgados
+                    </h3>
+
+                    <p>
+                        Salgados variados disponíveis
+                        no final do dia.
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            R$ 12,00
+                        </strong>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Sacola de Salgados"
+                                data-price="12.00"
+                                data-image="/img/Sacola_de_Salgados.png"
+                                data-category="Food to Save">
+
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =========================
+                 SACOLA 4 - SURPRESA
+            ========================== -->
+
+            <article class="sacola-card">
+
+                <div class="sacola-image">
+
+                    <img
+                            th:src="@{/img/Sacola_de_bolos.png}"
+                            alt="Sacola surpresa">
+
+                </div>
+
+
+                <div class="sacola-content">
+
+                        <span class="category">
+                            🎁 SURPRESA
+                        </span>
+
+                    <h3>
+                        Sacola Surpresa
+                    </h3>
+
+                    <p>
+                        Uma combinação especial de produtos
+                        variados da nossa padaria.
+                    </p>
+
+
+                    <div class="card-bottom">
+
+                        <strong>
+                            R$ 15,00
+                        </strong>
+
+                        <button
+                                type="button"
+                                class="add-cart"
+                                data-name="Sacola Surpresa"
+                                data-price="15.00"
+                                data-image="/img/Sacola_de_bolos.png"
+                                data-category="Food to Save">
+
+                            Adicionar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+
+<!-- =========================
+     RODAPÉ
+========================== -->
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+
+        <!-- MARCA -->
+        <div class="footer-brand">
+
+            <h2>
+                PÃO & FELICIDADE
+            </h2>
+
+            <p>
+                Sabor, carinho e felicidade
+                em cada momento.
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTATO -->
+        <div class="footer-info">
+
+            <h3>
+                Contato
+            </h3>
+
+            <p>
+                📍 Alameda Gabriel Monteiro da Silva, 1874
+            </p>
+
+            <p>
+                Jardim Paulista, São Paulo - SP
+            </p>
+
+            <p>
+                📞 (11) 87564-2765
+            </p>
+
+            <p>
+                ✉️ padaria_felicidade@gmail.com
+            </p>
+
+            <p>
+                📷 @padaria_felicidade
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- DIREITOS AUTORAIS -->
+    <div class="copyright">
+
+        © 2026 Pão & Felicidade —
+        Todos os direitos reservados.
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT DO CARRINHO
+========================== -->
+
+<script th:src="@{/js/carrinho.js}"></script>
+
+</body>
+</html>
